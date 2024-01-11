@@ -1,5 +1,6 @@
 import { NameCard } from "./NameCard"
 import { useFormik } from "formik"
+import * as Yup from 'yup'
 
 const PassengersPage = ({ send, state }) => {
     const formik = useFormik({
@@ -12,6 +13,14 @@ const PassengersPage = ({ send, state }) => {
             phone: '',
             email: '',
         },
+
+        validationSchema: Yup.object({
+            name: Yup.string().min(3),
+            lastName: Yup.string().min(3),
+            age: Yup.number().moreThan(0),
+            email: Yup.string().required()
+        }),
+
         onSubmit: (values) => {
             values.id = formik.submitCount 
             let newObj = {...values}
@@ -29,6 +38,7 @@ const PassengersPage = ({ send, state }) => {
     const toticketsPage = () => {
         send({ type: 'CONTINUE'})
     }
+    console.log(formik.errors)
     return (
         <form onSubmit={formik.handleSubmit} className="flex flex-col py-2 w-full">
             <h1 className="text-4xl font-bold py-8 w-full">Pasajeros</h1>

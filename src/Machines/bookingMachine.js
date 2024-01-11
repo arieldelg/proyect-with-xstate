@@ -75,6 +75,7 @@ const bookingMachine = createMachine({
       on: {
         CONTINUE: {
           target: 'tickets',
+          guard: 'passengersExist'
         },
         CANCEL: {
           target: 'inicial',
@@ -165,6 +166,11 @@ const bookingMachine = createMachine({
       info: {},
       countries: []
     })
+  },
+  guards: {
+    passengersExist: ({ context }) => {
+      return context.toPassengers.length > 0
+    }
   }
 }
 )
