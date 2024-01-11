@@ -1,5 +1,5 @@
 import { ArrowUturnLeftIcon } from '@heroicons/react/24/solid'
-import './Navbar.css'
+import './NavBar.css'
 
 const NavBar = ({ state, send }) => {
     const toHome = () => {
