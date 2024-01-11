@@ -1,0 +1,30 @@
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background-color: white;
+    border-radius: 10px 10px 0 0; 
+    align-items: center;
+}
+
+.navbar-title {
+    font-size: 54px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+.navbar-button {
+    font-size: x-large;
+    border-radius: 12px;
+    padding: 0 10px;
+    background-color: rgba(137, 43, 226, 0.452);
+    border: none;
+    color: white;
+    height: 44px;
+}
+
+.navbar-button:hover {
+    background-color: rgba(137, 43, 226, 0.664);;
+}
